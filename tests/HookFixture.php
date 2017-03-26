@@ -5,7 +5,7 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use TheCrypticAce\Hooks\TestHooks;
 
-class HookFixture extends TestCase
+class HookFixture extends ParentTestCase
 {
     use TestHooks;
 
