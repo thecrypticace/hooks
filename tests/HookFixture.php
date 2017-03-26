@@ -11,6 +11,20 @@ class HookFixture extends ParentTestCase
 
     public static $results = [];
 
+    protected static function customStaticHookPoint()
+    {
+        return static::classHooks()->run(function () {
+            return parent::customStaticHookPoint();
+        });
+    }
+
+    protected function customInstanceHookPoint()
+    {
+        return $this->hooks()->run(function () {
+            return parent::customInstanceHookPoint();
+        });
+    }
+
     /** @run before setUpBeforeClass **/
     public static function runsBeforeSetUpBeforeClass()
     {
@@ -47,6 +61,30 @@ class HookFixture extends ParentTestCase
         static::$results[] = "runsAfterSetUpTraits";
     }
 
+    /** @run before customStaticHookPoint **/
+    public static function runsBeforeCustomStaticHookPoint()
+    {
+        static::$results[] = "runsBeforeCustomStaticHookPoint";
+    }
+
+    /** @run after customStaticHookPoint **/
+    public static function runsAfterCustomStaticHookPoint()
+    {
+        static::$results[] = "runsAfterCustomStaticHookPoint";
+    }
+
+    /** @run before customInstanceHookPoint **/
+    public function runsBeforeCustomInstanceHookPoint()
+    {
+        static::$results[] = "runsBeforeCustomInstanceHookPoint";
+    }
+
+    /** @run after customInstanceHookPoint **/
+    public function runsAfterCustomInstanceHookPoint()
+    {
+        static::$results[] = "runsAfterCustomInstanceHookPoint";
+    }
+
     /** @run before tearDown **/
     public function runsBeforeTearDown()
     {
@@ -74,6 +112,9 @@ class HookFixture extends ParentTestCase
     /** @test */
     public function test()
     {
+        static::customStaticHookPoint();
+        $this->customInstanceHookPoint();
+
         $this->assertTrue(true);
     }
 }

@@ -26,6 +26,11 @@ class TestHooksTest extends TestCase
             "runsAfterSetUpTraits",
             "runsAfterSetUp",
 
+            "runsBeforeCustomStaticHookPoint",
+            "runsAfterCustomStaticHookPoint",
+            "runsBeforeCustomInstanceHookPoint",
+            "runsAfterCustomInstanceHookPoint",
+
             "runsBeforeTearDown",
             "runsAfterTearDown",
 

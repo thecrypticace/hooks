@@ -14,6 +14,16 @@ class ParentTestCase extends TestCase
         $this->setUpTraits();
     }
 
+    protected static function customStaticHookPoint()
+    {
+        //
+    }
+
+    protected function customInstanceHookPoint()
+    {
+        //
+    }
+
     protected function setUpTraits()
     {
         //
