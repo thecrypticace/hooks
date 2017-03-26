@@ -20,12 +20,15 @@ class TestHooksTest extends TestCase
         $this->assertEquals([
             "runsBeforeSetUpBeforeClass",
             "runsAfterSetUpBeforeClass",
+
             "runsBeforeSetUp",
             "runsBeforeSetUpTraits",
             "runsAfterSetUpTraits",
             "runsAfterSetUp",
+
             "runsBeforeTearDown",
             "runsAfterTearDown",
+
             "runsBeforeTearDownAfterClass",
             "runsAfterTearDownAfterClass",
         ], HookFixture::$results);
