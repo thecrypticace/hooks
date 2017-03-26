@@ -64,7 +64,7 @@ class Hooks
     private function defaultHook($name = null)
     {
         return $this->boundCallback(function () use ($name) {
-            return TestCase::$name();
+            return parent::$name();
         });
     }
 
