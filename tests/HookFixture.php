@@ -35,6 +35,18 @@ class HookFixture extends ParentTestCase
         static::$results[] = "runsAfterSetUp";
     }
 
+    /** @run before setUpTraits **/
+    public function runsBeforeSetUpTraits()
+    {
+        static::$results[] = "runsBeforeSetUpTraits";
+    }
+
+    /** @run after setUpTraits **/
+    public function runsAfterSetUpTraits()
+    {
+        static::$results[] = "runsAfterSetUpTraits";
+    }
+
     /** @run before tearDown **/
     public function runsBeforeTearDown()
     {

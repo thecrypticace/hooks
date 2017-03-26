@@ -21,6 +21,8 @@ class TestHooksTest extends TestCase
             "runsBeforeSetUpBeforeClass",
             "runsAfterSetUpBeforeClass",
             "runsBeforeSetUp",
+            "runsBeforeSetUpTraits",
+            "runsAfterSetUpTraits",
             "runsAfterSetUp",
             "runsBeforeTearDown",
             "runsAfterTearDown",

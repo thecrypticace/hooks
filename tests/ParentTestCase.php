@@ -10,5 +10,12 @@ class ParentTestCase extends TestCase
     public function setUp()
     {
         parent::setUp();
+
+        $this->setUpTraits();
+    }
+
+    protected function setUpTraits()
+    {
+        //
     }
 }
